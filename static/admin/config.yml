@@ -17,6 +17,8 @@ backend:
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
+locale: de
+
 # Add site links in DecapCMS (optional)
 site_url: https://sfw-website.netlify.app
 media_folder: static/img
@@ -27,10 +29,11 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    i18n: true
     editor:
       preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Veröffentlichungsdatum", name: "date", widget: "datetime" }
+      - { label: "Beschreibung", name: "description", widget: "string" }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
