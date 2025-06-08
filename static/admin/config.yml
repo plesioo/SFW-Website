@@ -34,6 +34,12 @@ collections:
       preview: false
     fields:
       - { label: "Titel", name: "title", widget: "string" }
-      - { label: "Veröffentlichungsdatum", name: "date", widget: "datetime" }
+      - {
+          label: "Veröffentlichungsdatum",
+          name: "date",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm:ssZ",
+        }
       - { label: "Beschreibung", name: "description", widget: "string" }
       - { label: "Inhalt", name: "body", widget: "markdown" }

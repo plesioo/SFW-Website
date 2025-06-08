@@ -1,3 +1,4 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
+languageCode = 'de'
 title = 'My New Hugo Site'
+timeZone = 'Europe/Berlin'
