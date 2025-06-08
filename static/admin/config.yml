@@ -7,12 +7,12 @@ backend:
 
   # Quickly see who did what (optional)
   commit_messages:
-    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
-    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
-    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}>
-    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}>
-    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}>
-    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}>
+    create: Create {{collection}} “{{slug}}” - {{author-name}}
+    update: Update {{collection}} “{{slug}}” - {{author-name}}
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}}
+    uploadMedia: Upload “{{path}}” - {{author-name}}
+    deleteMedia: Delete “{{path}}” - {{author-name}}
+    openAuthoring: Message {{message}} - {{author-name}}
 
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
@@ -28,7 +28,7 @@ collections:
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     i18n: true
     editor:
       preview: false
