@@ -79,10 +79,10 @@ collections:
                 options:
                   ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
 
-          - label: "Uhrzeit"
-            name: "time"
-            widget: "string"
-            hint: "z.B. 10:00-12:00"
+              - label: "Uhrzeit"
+                name: "time"
+                widget: "string"
+                hint: "z.B. 10:00-12:00"
 
       - label: "Artikelinformationen"
         name: "articleInfo"
@@ -101,19 +101,50 @@ collections:
             name: "body"
             widget: "markdown"
             modes: ["rich_text"]
+
+  - name: "sfwDay"
+    label: "SFW Tage"
+    label_singular: "SFW Tag Artikel"
+    folder: "content/sfwDay"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    i18n: true
-    editor:
-      preview: false
+    preview_path: "sfwDay/{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
-      - {
-          label: "Veröffentlichungsdatum",
-          name: "date",
-          widget: "datetime",
-          date_format: "YYYY-MM-DD",
-          time_format: "HH:mm:ssZ",
-        }
-      - { label: "Beschreibung", name: "description", widget: "string" }
-      - { label: "Inhalt", name: "body", widget: "markdown" }
+
+      - label: "Veröffentlichungsdatum"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ssZ"
+        default: "{{now}}"
+
+      - label: "Bild"
+        name: "image"
+        widget: "image"
+
+      - label: "Inhalt"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+
+  - name: "program"
+    label: "SFW Programme"
+    label_singular: "SFW Programm"
+    folder: "content/program"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "program/{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+
+      - label: "Veröffentlichungsdatum"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ssZ"
+        default: "{{now}}"
+
+      - label: "Plakat"
+        name: "poster"
+        widget: "image"
