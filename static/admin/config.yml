@@ -5,15 +5,6 @@ backend:
   identity_url: https://auth.decapbridge.com/sites/8cb8b33a-17dd-4625-8f2b-5dd7c28c7849
   gateway_url: https://gateway.decapbridge.com
 
-  # Quickly see who did what (optional)
-  commit_messages:
-    create: Create {{collection}} “{{slug}}” - {{author-name}}
-    update: Update {{collection}} “{{slug}}” - {{author-name}}
-    delete: Delete {{collection}} “{{slug}}” - {{author-name}}
-    uploadMedia: Upload “{{path}}” - {{author-name}}
-    deleteMedia: Delete “{{path}}” - {{author-name}}
-    openAuthoring: Message {{message}} - {{author-name}}
-
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
@@ -24,6 +15,32 @@ site_url: https://sfw-website.netlify.app
 media_folder: static/img
 public_folder: /img
 collections:
+  - name: "workshop"
+    label: "Workshops"
+    label_singular: "Workshop"
+    folder: "content/workshop"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "workshop/{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+
+      - label: "Veröffentlichungsdatum"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm:ssZ"
+        default: "{{now}}"
+
+      - label: "Bild"
+        name: "image"
+        widget: "image"
+
+      - label: "Inhalt"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
+
   - name: "course"
     label: "Wahlkurse"
     label_singular: "Wahlkurs"
