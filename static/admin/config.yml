@@ -67,11 +67,17 @@ collections:
 
           - { label: "Raum", name: "room", widget: "string" }
 
-          - label: "Wochentage"
-            name: "weekdays"
-            widget: "select"
-            options: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
-            multiple: true
+          - label: "Kurszeiten"
+            label_singular: "Kurszeit"
+            name: "courseDatetimes"
+            widget: "list"
+            summary: "{{fields.weekdays}} {{fields.time}} Uhr"
+            fields:
+              - label: "Wochentage"
+                name: "weekdays"
+                widget: "select"
+                options:
+                  ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
 
           - label: "Uhrzeit"
             name: "time"
