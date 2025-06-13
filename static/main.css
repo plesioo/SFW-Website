@@ -1,0 +1,21 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #204154;
+  --secondary-color: #73b72e;
+  --text-color: #ffffff;
+  --background-color: #f8f9fc;
+  --heading-text-color: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
