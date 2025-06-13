@@ -1,9 +1,3 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 :root {
   --primary-color: #204154;
   --secondary-color: #73b72e;
