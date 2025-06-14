@@ -1,0 +1,161 @@
+header {
+  display: flex;
+  background-color: var(--primary-color);
+  padding: 1.25em 1.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo__image {
+  width: 80px;
+}
+
+.logo__title {
+  font-weight: bold;
+  display: inline;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.hamburger__line {
+  background-color: #d9d9d9;
+  height: 5px;
+  width: 32px;
+  border-radius: 10px;
+}
+
+.hamburger__links {
+  display: none;
+}
+
+.hero {
+  background-image: url("/sfw-hero-bg.png");
+  width: 100%;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero__banner-wrapper {
+  position: absolute;
+  bottom: 10%;
+}
+
+.hero__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  padding-inline: 0.25em;
+}
+
+.hero__subtitle {
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  display: inline-block;
+  padding-inline: 0.375em;
+}
+
+.hero__title,
+.hero__subtitle {
+  padding-block: 0.375em;
+}
+
+@media (min-width: 750px) {
+  .hamburger {
+    display: none;
+  }
+
+  .hamburger__links {
+    display: flex;
+    gap: 1.5em;
+    font-size: 1.25rem;
+  }
+
+  .hamburger__links a {
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo__image {
+    width: 100px;
+  }
+
+  .logo__title {
+    font-size: 3rem;
+  }
+
+  .hamburger__links {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  header {
+    padding: 1.5em 2.25em;
+  }
+
+  .logo__image {
+    width: 120px;
+  }
+
+  .logo__title {
+    font-size: 3.5rem;
+  }
+
+  .hamburger__links {
+    font-size: 1.75rem;
+  }
+
+  .hero {
+    min-height: 615px;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2.25rem;
+  }
+}
