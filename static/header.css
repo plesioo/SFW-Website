@@ -122,11 +122,11 @@ header {
   }
 
   .hero__title {
-    font-size: 3rem;
+    font-size: 3.25rem;
   }
 
   .hero__subtitle {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -152,10 +152,40 @@ header {
   }
 
   .hero__title {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
   }
 
   .hero__subtitle {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  header {
+    padding: 1.75em 3em;
+  }
+
+  .logo__image {
+    width: 140px;
+  }
+
+  .logo__title {
+    font-size: 4rem;
+  }
+
+  .hamburger__links {
+    font-size: 2rem;
+  }
+
+  .hero {
+    min-height: 750px;
+  }
+
+  .hero__title {
+    font-size: 4.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 3rem;
   }
 }
