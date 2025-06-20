@@ -1,0 +1,88 @@
+.hero {
+  background-image: url("/sfw-hero-bg.png");
+  width: 100%;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero__banner-wrapper {
+  position: absolute;
+  bottom: 10%;
+}
+
+.hero__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  padding-inline: 0.25em;
+}
+
+.hero__subtitle {
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  display: inline-block;
+  padding-inline: 0.375em;
+}
+
+.hero__title,
+.hero__subtitle {
+  padding-block: 0.375em;
+}
+
+@media (min-width: 750px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__title {
+    font-size: 3.25rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    min-height: 615px;
+  }
+
+  .hero__title {
+    font-size: 3.75rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero {
+    min-height: 750px;
+  }
+
+  .hero__title {
+    font-size: 4.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 3rem;
+  }
+}

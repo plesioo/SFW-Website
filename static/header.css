@@ -40,39 +40,6 @@ header {
   display: none;
 }
 
-.hero {
-  background-image: url("/sfw-hero-bg.png");
-  width: 100%;
-  min-height: 250px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.hero__banner-wrapper {
-  position: absolute;
-  bottom: 10%;
-}
-
-.hero__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background-color: var(--primary-color);
-  padding-inline: 0.25em;
-}
-
-.hero__subtitle {
-  font-weight: 500;
-  background-color: var(--secondary-color);
-  display: inline-block;
-  padding-inline: 0.375em;
-}
-
-.hero__title,
-.hero__subtitle {
-  padding-block: 0.375em;
-}
-
 @media (min-width: 750px) {
   .hamburger {
     display: none;
@@ -90,18 +57,6 @@ header {
     text-decoration: none;
     cursor: pointer;
   }
-
-  .hero {
-    min-height: 400px;
-  }
-
-  .hero__title {
-    font-size: 2.5rem;
-  }
-
-  .hero__subtitle {
-    font-size: 1.75rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -115,18 +70,6 @@ header {
 
   .hamburger__links {
     font-size: 1.5rem;
-  }
-
-  .hero {
-    min-height: 500px;
-  }
-
-  .hero__title {
-    font-size: 3.25rem;
-  }
-
-  .hero__subtitle {
-    font-size: 2.25rem;
   }
 }
 
@@ -146,18 +89,6 @@ header {
   .hamburger__links {
     font-size: 1.75rem;
   }
-
-  .hero {
-    min-height: 615px;
-  }
-
-  .hero__title {
-    font-size: 3.75rem;
-  }
-
-  .hero__subtitle {
-    font-size: 2.5rem;
-  }
 }
 
 @media (min-width: 1536px) {
@@ -175,17 +106,5 @@ header {
 
   .hamburger__links {
     font-size: 2rem;
-  }
-
-  .hero {
-    min-height: 750px;
-  }
-
-  .hero__title {
-    font-size: 4.5rem;
-  }
-
-  .hero__subtitle {
-    font-size: 3rem;
   }
 }
