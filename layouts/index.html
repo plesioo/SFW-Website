@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/header.css" />
     <link rel="stylesheet" href="/hero.css" />
     <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/image-viewer.css" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,19 +30,19 @@
         />
         <h1 class="logo__title">SFW</h1>
       </div>
-        <label class="hamburger__menu-btn">
-          <input type="checkbox" id="checkbox" />
-        </label>
-        <nav class="hamburger__menu">
-          <ul class="hamburger__links">
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/workshops">Workshops</a></li>
-            <li><a href="/wahlkurse">Wahlkurse</a></li>
-            <li><a href="/sfw-tag">SFW Tag</a></li>
-            <li><a href="/programm">Programm</a></li>
-          </ul>
-        </nav>
-      </header>
+      <label class="hamburger__menu-btn">
+        <input type="checkbox" id="checkbox" />
+      </label>
+      <nav class="hamburger__menu">
+        <ul class="hamburger__links">
+          <li><a href="/">Homepage</a></li>
+          <li><a href="/workshops">Workshops</a></li>
+          <li><a href="/wahlkurse">Wahlkurse</a></li>
+          <li><a href="/sfw-tag">SFW Tag</a></li>
+          <li><a href="/programm">Programm</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <section class="hero">
         <div class="hero__banner-wrapper">
@@ -49,7 +50,7 @@
           <h3 class="hero__subtitle">Kepler Gymnasium Weiden</h3>
         </div>
       </section>
-<div class="home">
+      <div class="home">
         <section>
           <h2 class="home__title">Workshops</h2>
           <article class="home__article">
@@ -88,7 +89,36 @@
             tabindex="0"
           />
         </section>
+        <div
+          class="image-viewer"
+          id="image-viewer"
+          tabindex="-1"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+          <div class="image-viewer__container">
+            <img
+              src="./sfw-program.jpg"
+              alt="Programm"
+              class="image-viewer__img"
+              id="image-viewer-img"
+            />
+          </div>
+          <button
+            class="image-viewer__close"
+            id="image-viewer-close"
+            aria-label="Programm schließen"
+          >
+            &times;
+          </button>
+        </div>
       </div>
     </main>
+    {{ $js := resources.Get "js/image-viewer.js" | minify | fingerprint }}
+    <script
+      src="{{ $js.RelPermalink }}"
+      integrity="{{ $js.Data.Integrity }}"
+    ></script>
   </body>
 </html>
