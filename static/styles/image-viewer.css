@@ -19,9 +19,6 @@
   z-index: 1;
   max-width: 90vw;
   max-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .image-viewer__img {
