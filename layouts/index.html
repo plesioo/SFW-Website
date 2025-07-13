@@ -30,16 +30,16 @@
         />
         <h1 class="logo__title">SFW</h1>
       </div>
-      <label class="hamburger__menu-btn">
+      <label class="hamburger__menu-btn" id="hamburger-menu-btn">
         <input type="checkbox" id="checkbox" />
       </label>
-      <nav class="hamburger__menu">
+      <nav class="hamburger__menu" id="hamburger-menu">
         <ul class="hamburger__links">
           <li><a href="/">Homepage</a></li>
           <li><a href="/workshops">Workshops</a></li>
           <li><a href="/wahlkurse">Wahlkurse</a></li>
           <li><a href="/sfw-tag">SFW Tag</a></li>
-          <li><a href="/programm">Programm</a></li>
+          <li><a href="#program">Programm</a></li>
         </ul>
       </nav>
     </header>
@@ -79,7 +79,7 @@
             </p>
           </article>
         </section>
-        <section>
+        <section id="program">
           <h2 class="home__title">Unser Programm</h2>
           <img
             src="./images/sfw-program.jpg"
@@ -115,10 +115,16 @@
         </div>
       </div>
     </main>
-    {{ $js := resources.Get "js/image-viewer.js" | minify | fingerprint }}
+    {{ $imageViewerJS := resources.Get "js/image-viewer.js" | minify |
+    fingerprint }}
     <script
-      src="{{ $js.RelPermalink }}"
-      integrity="{{ $js.Data.Integrity }}"
+      src="{{ $imageViewerJS.RelPermalink }}"
+      integrity="{{ $imageViewerJS.Data.Integrity }}"
+    ></script>
+    {{ $indexJS := resources.Get "js/index.js" | minify | fingerprint }}
+    <script
+      src="{{ $indexJS.RelPermalink }}"
+      integrity="{{ $indexJS.Data.Integrity }}"
     ></script>
   </body>
 </html>

@@ -134,13 +134,14 @@ table {
   border-spacing: 0;
 }
 
-/* Color Variables */
 :root {
   --primary-color: #204154;
   --secondary-color: #73b72e;
   --text-color: #ffffff;
   --background-color: #f8f9fc;
   --heading-text-color: #000000;
+
+  scroll-behavior: smooth;
 }
 
 body {
