@@ -3,6 +3,7 @@ const trigger = document.getElementById("image-viewer-trigger");
 const overlay = document.getElementById("image-viewer-overlay");
 const closeBtn = document.getElementById("image-viewer-close");
 const img = document.getElementById("image-viewer-img");
+const minDesktopWidth = 1024;
 
 let scale = 1;
 let origin = { x: 0, y: 0 };
@@ -32,7 +33,7 @@ function closeViewer() {
 }
 
 function onImgClick(e) {
-  if (!isZoomed) {
+  if (!isZoomed && !isMobileView()) {
     const rect = img.getBoundingClientRect();
 
     scale = 2.2;
@@ -54,6 +55,10 @@ function onImgClick(e) {
     img.style.cursor = "zoom-in";
     isZoomed = false;
   }
+}
+
+function isMobileView() {
+  return window.innerWidth < minDesktopWidth;
 }
 
 function updateTransform() {
