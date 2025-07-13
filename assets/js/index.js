@@ -30,7 +30,6 @@ function openBurgerMenu() {
 }
 
 function closeBurgerMenu() {
-  hamburgerMenu.style.display = "none";
   input.checked = false;
 }
 
