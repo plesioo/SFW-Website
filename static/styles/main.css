@@ -136,6 +136,7 @@ table {
 
 :root {
   --primary-color: #204154;
+  --primary-color-hover: #294f67;
   --secondary-color: #73b72e;
   --text-color: #ffffff;
   --background-color: #f8f9fc;
