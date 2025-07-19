@@ -37,3 +37,18 @@ function openDesktopMenu() {
   hamburgerMenu.style.display = "block";
   input.checked = false;
 }
+
+setTimeout(() => {
+  removeCommonNinjaAdd();
+}, 1500);
+
+function removeCommonNinjaAdd() {
+  const host = document.querySelector(".commonninja_component");
+  if (host) {
+    const shadowRoot = host.shadowRoot;
+    const addButton = shadowRoot.querySelector(".commonninja-ribbon-link");
+    if (addButton) {
+      addButton.remove();
+    }
+  }
+}

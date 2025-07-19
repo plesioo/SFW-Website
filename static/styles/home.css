@@ -88,13 +88,21 @@
   gap: 2em;
   margin-block: 2em;
   max-width: 1200px;
-  margin-inline: auto;
 }
 
 .home__section-logos img {
   width: 100px;
   object-fit: contain;
   cursor: default;
+}
+
+.home__section-logos,
+.home__section-insta {
+  margin-inline: auto;
+}
+
+.home__section-insta {
+  max-width: 1300px;
 }
 
 @media (min-width: 600px) {
