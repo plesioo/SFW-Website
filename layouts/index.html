@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/hero.css" />
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/image-viewer.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,9 +25,9 @@
     <header>
       <div class="logo__container">
         <img
-          src="./images/kepler-icon.svg"
+          src="./images/kepler-logo.svg"
           class="logo__image"
-          alt="Schülerforschungswerks Logo"
+          alt="Kepler Gymnasium Logo"
         />
         <h1 class="logo__title">SFW</h1>
         <a class="overlay__link" href="/" aria-label="Zur Startseite"></a>
@@ -227,6 +228,33 @@
         </section>
       </div>
     </main>
+    <footer>
+      <div class="footer__container">
+        <div class="footer__container">
+          <p>
+            &copy; 2025 Kepler-Gymnasium Schülerforschungswerkstatt -
+            <a href="https://opensource.org/licenses/MIT">MIT</a>
+          </p>
+          <a>Datenschutz</a>
+          <a>Impressum</a>
+        </div>
+        <div class="footer__container--socials">
+          <a href="https://github.com/plesioo/SFW-Website">
+            <img src="./images/github-logo.svg" alt="Github Logo" />
+          </a>
+          <a href="https://www.instagram.com/sfwamkgw/">
+            <img src="./images/insta-logo.svg" alt="Instagram Logo" />
+          </a>
+        </div>
+      </div>
+
+      <p class="footer__author">
+        Made by
+        <a href="https://github.com/plesioo" class="footer__link"
+          >Phillip Fleischer</a
+        >
+      </p>
+    </footer>
     {{ $imageViewerJS := resources.Get "js/image-viewer.js" | minify |
     fingerprint }}
     <script
