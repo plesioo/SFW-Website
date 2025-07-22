@@ -17,7 +17,6 @@ header {
   padding: var(--padding-header-top-bottom) var(--padding-header-left-right);
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 /* Logo styles */
@@ -170,7 +169,6 @@ header {
     font-size: 1.25rem;
     color: var(--text-color);
     font-weight: 500;
-    text-decoration: none;
     cursor: pointer;
     padding: 0;
   }
@@ -217,17 +215,17 @@ header {
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1800px) {
   header {
-    padding: 1.75em 3em;
+    padding: 1.675em 2.875em;
   }
 
   .logo__image {
-    width: 140px;
+    width: 130px;
   }
 
   .logo__title {
-    font-size: 4rem;
+    font-size: 3.875rem;
   }
 
   .hamburger__links {
@@ -235,6 +233,6 @@ header {
   }
 
   .hamburger__links a {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 }

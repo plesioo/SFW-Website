@@ -13,17 +13,17 @@ footer {
   gap: 1em;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
 .footer__container {
   display: flex;
   flex-direction: column;
   gap: 0.875em;
   margin-bottom: 0.5em;
   align-items: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
 .footer__container--socials {
@@ -36,7 +36,7 @@ footer a {
   height: 24px;
 }
 
-.footer__author {
+.footer__text--author {
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -49,10 +49,6 @@ footer a {
 
   .footer__container-links {
     flex-direction: row;
-  }
-
-  footer p {
-    margin: 0;
   }
 }
 
@@ -67,7 +63,7 @@ footer a {
     justify-content: center;
   }
 
-  .footer__author {
+  .footer__text--author {
     font-size: 0.875rem;
   }
 }

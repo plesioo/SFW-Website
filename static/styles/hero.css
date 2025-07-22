@@ -2,7 +2,7 @@
   background-image: url("../images/sfw-hero-bg.png");
   background-color: white;
   width: 100%;
-  min-height: 250px;
+  height: 45vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -34,7 +34,7 @@
 
 @media (min-width: 750px) {
   .hero {
-    min-height: 400px;
+    height: 70vh;
   }
 
   .hero__title {
@@ -48,7 +48,7 @@
 
 @media (min-width: 1024px) {
   .hero {
-    min-height: 500px;
+    height: 80vh;
   }
 
   .hero__title {
@@ -61,10 +61,6 @@
 }
 
 @media (min-width: 1280px) {
-  .hero {
-    min-height: 615px;
-  }
-
   .hero__title {
     font-size: 3.75rem;
   }
@@ -74,16 +70,16 @@
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1800px) {
   .hero {
-    min-height: 750px;
+    height: 85vh;
   }
 
   .hero__title {
-    font-size: 4.5rem;
+    font-size: 4.25rem;
   }
 
   .hero__subtitle {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 }
