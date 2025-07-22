@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .home__title {
@@ -41,7 +42,7 @@
   border-radius: 4px;
 }
 
-.home__img-program {
+.home__img--program {
   width: 100%;
   max-width: 900px;
   cursor: pointer;
@@ -75,7 +76,7 @@
 .home__title--sponsor {
   font-size: 1.25rem;
   color: var(--heading-text-color);
-  opacity: 0.3;
+  opacity: 0.4;
   margin-top: 1.5em;
   text-align: center;
   font-weight: 500;
@@ -90,28 +91,33 @@
   text-decoration: none;
 }
 
-.home__section-logos {
+.home__section--logos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
   margin-block: 1em 4em;
   max-width: 1200px;
+  position: relative;
 }
 
-.home__section-logos img {
+.home__section--logos img {
   width: 100px;
   object-fit: contain;
   cursor: default;
 }
 
-.home__section-logos,
-.home__section-insta {
+.home__section--logos,
+.home__section--insta {
   margin-inline: auto;
 }
 
-.home__section-insta {
+.home__section--insta {
   max-width: 1300px;
+}
+
+.home__container--wheels {
+  display: none;
 }
 
 @media (min-width: 600px) {
@@ -148,8 +154,58 @@
     font-size: 1.5rem;
   }
 
-  .home__section-logos img {
+  .home__section--logos img {
     width: 150px;
+  }
+
+  .home__container--wheels {
+    display: initial;
+  }
+
+  .home__img--wheel {
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  .home__img--wheel.wheel1 {
+    top: 10%;
+    left: 5%;
+  }
+
+  .home__img--wheel.wheel2 {
+    top: 50%;
+    left: 0;
+  }
+
+  .home__img--wheel.wheel3 {
+    top: 30%;
+    right: 5%;
+  }
+
+  .home__img--wheel.wheel4 {
+    top: 70%;
+    right: 0;
+  }
+
+  .home__img--wheel.wheel5 {
+    top: 18%;
+    right: 20%;
+  }
+
+  .home__img--wheel.wheel6 {
+    top: 80%;
+    left: 20%;
+  }
+
+  .home__img--wheel.wheel7 {
+    top: 40%;
+    left: 15%;
+  }
+
+  .home__img--wheel.wheel8 {
+    top: 80%;
+    right: 15%;
   }
 }
 
@@ -184,7 +240,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .home__section-logos img {
+  .home__section--logos img {
     width: 180px;
   }
 }
@@ -207,7 +263,19 @@
     padding-bottom: 4em;
   }
 
-  .home__section-logos img {
+  .home__section--logos img {
     width: 200px;
+  }
+
+  .home__img--wheel {
+    width: 150px;
+  }
+
+  .home__img--program {
+    max-width: 1000px;
+  }
+
+  .home__section--insta {
+    max-width: 1600px;
   }
 }
