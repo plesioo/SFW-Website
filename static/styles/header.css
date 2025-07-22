@@ -41,7 +41,7 @@ header {
 
 /* Hamburger styles */
 .hamburger__menu {
-  --menu-space: 0.75em;
+  --menu-space: 0.875em;
 
   translate: -100%;
   top: calc(var(--padding-header-top-bottom) * 2 + var(--logo-height));
