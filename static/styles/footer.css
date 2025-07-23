@@ -11,6 +11,7 @@ footer {
   font-size: 0.875rem;
   line-height: 1.25;
   gap: 1em;
+  margin-top: auto;
 }
 
 .footer__container {
