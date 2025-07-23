@@ -12,8 +12,8 @@ locale: de
 
 # Add site links in DecapCMS (optional)
 site_url: https://sfw-website.netlify.app
-media_folder: static/img
-public_folder: /img
+media_folder: static/images/articles
+public_folder: /images/articles
 collections:
   - name: "workshop"
     label: "Workshops"
