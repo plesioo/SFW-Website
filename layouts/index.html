@@ -67,115 +67,41 @@
         <section id="workshops">
           <h2 class="home__title">Workshops</h2>
           <div class="home__articles">
+            {{ with .Site.GetPage "workshop" }}
+              {{ range .Pages }}
             <article class="home__article">
-              <a class="overlay__link" href="/workshops"></a>
-              <img
-                src="./images/workshop.jpg"
-                alt="Workshop"
-                class="home__img"
-              />
-              <h3 class="home__subtitle">Workshop 2024</h3>
+                  <a class="overlay__link" href="{{ .RelPermalink }}"></a>
+                  <img src="{{ .Params.image }}" alt="Workshop {{ .Title }}" class="home__img" />
+                  <h3 class="home__subtitle">{{ .Title }}</h3>
               <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                  <!-- Only display the first paragraph -->
+                  {{ with findRE "<p>(.*?)</p>" .Content 1 }}
+                    {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
+                  {{ end }}
               </p>
             </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/workshops"></a>
-              <img
-                src="./images/workshop.jpg"
-                alt="Workshop"
-                class="home__img"
-              />
-              <h3 class="home__subtitle">Workshop 2025</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/workshops"></a>
-              <img
-                src="./images/workshop.jpg"
-                alt="Workshop"
-                class="home__img"
-              />
-              <h3 class="home__subtitle">Workshop 2025</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/workshops"></a>
-              <img
-                src="./images/workshop.jpg"
-                alt="Workshop"
-                class="home__img"
-              />
-              <h3 class="home__subtitle">Workshop 2025</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
+              {{ end }}
+            {{ end }}
           </div>
         </section>
         <section id="courses">
           <h2 class="home__title">Wahlkurse</h2>
           <div class="home__articles">
+{{ with .Site.GetPage "course" }}
+              {{ range .Pages }}
             <article class="home__article">
-              <a class="overlay__link" href="/wahlkurse"></a>
-              <img src="./images/course.jpg" alt="Wahlkurs" class="home__img" />
-              <h3 class="home__subtitle">Wahlkurs 2024</h3>
+              <a class="overlay__link" href="{{ .RelPermalink }}"></a>
+              <img src="{{ .Params.image }}" alt="Wahlkurs {{ .Title }}" class="home__img" />
+              <h3 class="home__subtitle">{{ .Title }}</h3>
               <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                <!-- Only display the first paragraph -->
+                  {{ with findRE "<p>(.*?)</p>" .Content 1 }}
+                    {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
+                  {{ end }}
               </p>
             </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/wahlkurse"></a>
-              <img src="./images/course.jpg" alt="Wahlkurs" class="home__img" />
-              <h3 class="home__subtitle">Wahlkurs 2024</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/wahlkurse"></a>
-              <img src="./images/course.jpg" alt="Wahlkurs" class="home__img" />
-              <h3 class="home__subtitle">Wahlkurs 2024</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
-            <article class="home__article">
-              <a class="overlay__link" href="/wahlkurse"></a>
-              <img src="./images/course.jpg" alt="Wahlkurs" class="home__img" />
-              <h3 class="home__subtitle">Wahlkurs 2024</h3>
-              <p class="home__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              </p>
-            </article>
+            {{ end }}
+            {{ end }}
           </div>
         </section>
         <section id="program" class="home__section">
