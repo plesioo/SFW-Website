@@ -19,6 +19,8 @@
 }
 
 .home__article {
+  --min-article-height: 400px;
+
   background-color: var(--primary-color);
   border-radius: 4px;
   padding: 1.25em 1em;
@@ -26,6 +28,8 @@
   position: relative;
   margin-bottom: 1em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: var(--min-article-height);
 }
 
 .home__article:hover,
