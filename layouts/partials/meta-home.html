@@ -1,0 +1,32 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>SFW - {{ .Title }}</title>
+  <link
+    href="./images/kepler-favicon.png"
+    rel="icon"
+    type="image/vnd.microsoft.icon"
+  />
+  <!-- Stylesheets -->
+  {{- $mainCss := resources.Get "css/main.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
+  {{- $headerCss := resources.Get "css/header.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
+  {{- $footerCss := resources.Get "css/footer.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $footerCss.RelPermalink }}" integrity="{{ $footerCss.Data.Integrity }}" />
+  {{- $heroCss := resources.Get "css/hero.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
+  {{- $homeCss := resources.Get "css/home.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}" />
+  {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet"
+  />
+</head>

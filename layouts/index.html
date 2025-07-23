@@ -1,61 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>SFW - Home</title>
-    <link
-      href="./images/kepler-favicon.png"
-      rel="icon"
-      type="image/vnd.microsoft.icon"
-    />
-    <!-- Stylesheets -->
-    {{- $mainCss := resources.Get "css/main.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
-    {{- $headerCss := resources.Get "css/header.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
-    {{- $footerCss := resources.Get "css/footer.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $footerCss.RelPermalink }}" integrity="{{ $footerCss.Data.Integrity }}" />
-    {{- $heroCss := resources.Get "css/hero.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
-    {{- $homeCss := resources.Get "css/home.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}" />
-    {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fo nts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  {{ partial "meta-home.html" . }}
   <body>
-    <header>
-      <div class="logo__container">
-        <img
-          src="./images/kepler-logo.svg"
-          class="logo__image"
-          alt="Kepler Gymnasium Logo"
-        />
-        <h1 class="logo__title">SFW</h1>
-        <a class="overlay__link" href="/" aria-label="Zur Startseite"></a>
-      </div>
-      <label class="hamburger__menu-btn" id="hamburger-menu-btn">
-        <input type="checkbox" id="checkbox" />
-      </label>
-      <nav class="hamburger__menu" id="hamburger-menu">
-        <ul class="hamburger__links">
-          <!-- <li><a href="/">Homepage</a></li> -->
-          <li><a href="#workshops">Workshops</a></li>
-          <li><a href="#courses">Wahlkurse</a></li>
-          <li><a href="#sfw-day">SFW Tag</a></li>
-          <li><a href="#program">Programm</a></li>
-        </ul>
-      </nav>
-    </header>
+    {{ partial "header.html" . }}
     <main>
       <section class="hero">
         <div class="hero__banner-wrapper">
@@ -69,17 +16,17 @@
           <div class="home__articles">
             {{ with .Site.GetPage "workshop" }}
               {{ range .Pages }}
-            <article class="home__article">
+                <article class="home__article">
                   <a class="overlay__link" href="{{ .RelPermalink }}"></a>
                   <img src="{{ .Params.image }}" alt="Workshop {{ .Title }}" class="home__img" />
                   <h3 class="home__subtitle">{{ .Title }}</h3>
-              <p class="home__text">
+                  <p class="home__text">
                   <!-- Only display the first paragraph -->
                   {{ with findRE "<p>(.*?)</p>" .Content 1 }}
                     {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
                   {{ end }}
-              </p>
-            </article>
+                  </p>
+                </article>
               {{ end }}
             {{ end }}
           </div>
@@ -87,20 +34,20 @@
         <section id="courses">
           <h2 class="home__title">Wahlkurse</h2>
           <div class="home__articles">
-{{ with .Site.GetPage "course" }}
+            {{ with .Site.GetPage "course" }}
               {{ range .Pages }}
-            <article class="home__article">
-              <a class="overlay__link" href="{{ .RelPermalink }}"></a>
-              <img src="{{ .Params.image }}" alt="Wahlkurs {{ .Title }}" class="home__img" />
-              <h3 class="home__subtitle">{{ .Title }}</h3>
-              <p class="home__text">
-                <!-- Only display the first paragraph -->
+                <article class="home__article">
+                  <a class="overlay__link" href="{{ .RelPermalink }}"></a>
+                  <img src="{{ .Params.image }}" alt="Wahlkurs {{ .Title }}" class="home__img" />
+                  <h3 class="home__subtitle">{{ .Title }}</h3>
+                  <p class="home__text">
+                  <!-- Only display the first paragraph -->
                   {{ with findRE "<p>(.*?)</p>" .Content 1 }}
                     {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
                   {{ end }}
-              </p>
-            </article>
-            {{ end }}
+                  </p>
+                </article>
+              {{ end }}
             {{ end }}
           </div>
         </section>
@@ -188,49 +135,7 @@
             &times;
           </button>
         </div>
-        <h2 class="home__title--sponsor">Unterstützt von:</h2>
-        <section class="home__section--logos">
-          <img
-            src="./images/logos/gebhardt-logo.svg"
-            alt="Gebhardt Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/hoehbauer-logo.svg"
-            alt="Höhbauer Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/jugend-forscht-logo.svg"
-            alt="Jugend forscht Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/nexans-logo.svg"
-            alt="Nexans Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/novem-logo.svg"
-            alt="Novem Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/oth-logo.svg"
-            alt="OTH Weiden Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/tiki-logo.svg"
-            alt="Tiki Logo"
-            class="home__img--program"
-          />
-          <img
-            src="./images/logos/uebzo-logo.svg"
-            alt="ÜBZO Logo"
-            class="home__img--program"
-          />
-        </section>
+        {{ partial "sponsors.html" . }}
         <h2 class="home__title">Folge uns auf Instagram:</h2>
         <section class="home__section--insta">
           <script
@@ -243,41 +148,9 @@
         </section>
       </div>
     </main>
-    <footer>
-      <div class="footer__container">
-        <div class="footer__container">
-          <p>
-            &copy; 2025 Kepler-Gymnasium Schülerforschungswerkstatt -
-            <a
-              href="https://github.com/plesioo/SFW-Website/blob/master/LICENSE"
-              title="View source code license"
-              >MIT</a
-            >
-          </p>
-          <a>Datenschutz</a>
-          <a>Impressum</a>
-        </div>
-        <div class="footer__container--socials">
-          <a href="https://github.com/plesioo/SFW-Website">
-            <img src="./images/github-logo.svg" alt="Github Logo" />
-          </a>
-          <a href="https://www.instagram.com/sfwamkgw/">
-            <img src="./images/insta-logo.svg" alt="Instagram Logo" />
-          </a>
-        </div>
-      </div>
+    {{ partial "footer.html" . }} 
 
-      <p class="footer__text--author">
-        Made by
-        <a href="https://github.com/plesioo" class="footer__link underline"
-          >Phillip Fleischer</a
-        >,
-        <br />
-        designed with <span class="underline">Stefan Heidel</span>
-      </p>
-    </footer>
-    {{ $imageViewerJS := resources.Get "js/image-viewer.js" | minify |
-    fingerprint }}
+    {{ $imageViewerJS := resources.Get "js/image-viewer.js" | minify | fingerprint }}
     <script
       src="{{ $imageViewerJS.RelPermalink }}"
       integrity="{{ $imageViewerJS.Data.Integrity }}"

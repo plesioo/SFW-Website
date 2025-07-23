@@ -1,0 +1,11 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SFW - {{ .Page.Title }}</title>
+  {{- $mainCss := resources.Get "css/main.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
+  {{- $headerCss := resources.Get "css/header.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $headerCss.RelPermalink }}" integrity="{{ $headerCss.Data.Integrity }}" />
+  {{- $footerCss := resources.Get "css/footer.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $footerCss.RelPermalink }}" integrity="{{ $footerCss.Data.Integrity }}" />
+</head>
