@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-  {{ partial "meta.html" . }}
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ block "head" . }}
+      {{ partial "meta.html" . }}
+    {{ end }}
+  </head>
   <body>
     {{ partial "header.html" . }} 
     {{ block "main" . }} 
     {{ end }} 
     {{ partial "footer.html" . }}
+    {{ block "scripts" . }}{{ end }}
   </body>
 </html>

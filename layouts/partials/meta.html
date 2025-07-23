@@ -1,7 +1,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SFW - {{ .Page.Title }}</title>
+  <title>SFW - {{ .Title }}</title>
+  <link
+  href="./images/page/kepler-favicon.png"
+  rel="icon"
+  type="image/vnd.microsoft.icon"
+/>
   {{- $mainCss := resources.Get "css/main.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}" integrity="{{ $mainCss.Data.Integrity }}" />
   {{- $headerCss := resources.Get "css/header.css" | minify | fingerprint -}}
