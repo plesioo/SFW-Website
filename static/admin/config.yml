@@ -45,6 +45,7 @@ collections:
     label: "Wahlkurse"
     label_singular: "Wahlkurs"
     folder: "content/course"
+    identifier_field: "courseInfo.title"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "course/{{slug}}"
@@ -53,6 +54,7 @@ collections:
         name: "courseInfo"
         widget: "object"
         fields:
+          - { label: "Kursname", name: "title", widget: "string" }
           - label: "Anrede Leitung"
             name: "leadSalutation"
             widget: "select"
@@ -88,7 +90,6 @@ collections:
         name: "articleInfo"
         widget: "object"
         fields:
-          - { label: "Titel", name: "title", widget: "string" }
           - label: "Veröffentlichungsdatum"
             name: "date"
             widget: "datetime"
