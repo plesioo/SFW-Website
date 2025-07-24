@@ -1,5 +1,4 @@
 {{ define "head" }}
-  {{ partial "meta.html" . }}
   {{- $heroCss := resources.Get "css/hero.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
   {{- $homeCss := resources.Get "css/home.css" | minify | fingerprint -}}
