@@ -7,6 +7,7 @@ courseInfo:
   leadName: Ehrmann
   grades: 7 - 8
   room: "215"
+  title: Coding-Club (Programmier-Werkstatt 2)
 articleInfo:
   date: 2025-07-24T07:05:00+02:00
   title: Coding-Club (Programmier-Werkstatt 2)
