@@ -114,29 +114,31 @@
           />
         </div>
         <h2 class="home__title">Unser Programm</h2>
-        <img
-          src="./images/page/sfw-program.jpg"
-          alt="Programm"
-          class="home__img--program"
-          id="image-viewer-trigger"
-          tabindex="0"
-        />
-      </section>
-      <div
-        class="image-viewer"
-        id="image-viewer"
-        tabindex="-1"
-        aria-modal="true"
-        role="dialog"
-      >
-        <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
-        <div class="image-viewer__container">
+        {{ with .Site.GetPage "program" }}
           <img
-            src="./images/page/sfw-program.jpg"
+            src="{{ (index .Pages 0).Params.programImg }}"
             alt="Programm"
-            class="image-viewer__img"
-            id="image-viewer-img"
+            class="home__img--program"
+            id="image-viewer-trigger"
+            tabindex="0"
           />
+        </section>
+        <div
+          class="image-viewer"
+          id="image-viewer"
+          tabindex="-1"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+          <div class="image-viewer__container">
+            <img
+              src="{{ (index .Pages 0).Params.programImg }}"
+              alt="Programm"
+              class="image-viewer__img"
+              id="image-viewer-img"
+            />
+        {{ end }}
         </div>
         <button
           class="image-viewer__close"

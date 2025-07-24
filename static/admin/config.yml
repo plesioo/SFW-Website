@@ -151,5 +151,5 @@ collections:
       - { label: "Titel", name: "title", widget: "string" }
 
       - label: "Bild des Programms"
-        name: "programmImg"
+        name: "programImg"
         widget: "image"
