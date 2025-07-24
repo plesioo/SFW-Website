@@ -7,6 +7,7 @@ courseInfo:
   courseDatetimes:
     - weekdays: Montag
       time: 10:00-12:00
+  title: Test
 articleInfo:
   date: 2025-07-23T10:34:00+02:00
   title: Robotik-Lab (LEGO-Werkstatt)
