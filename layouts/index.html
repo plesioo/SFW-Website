@@ -31,13 +31,10 @@
             {{ range .Pages }}
               <article class="home__article">
                 <a class="overlay__link" href="{{ .RelPermalink }}"></a>
-                <img src="{{ .Params.image }}" alt="Workshop {{ .Title }}" class="home__img" />
+                <img src="{{ .Params.articleInfo.image }}" alt="Workshop {{ .Title }}" class="home__img" />
                 <h3 class="home__subtitle">{{ .Title }}</h3>
                 <p class="home__text">
-                <!-- Only display the first paragraph -->
-                {{ with findRE "<p>(.*?)</p>" .Content 1 }}
-                  {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
-                {{ end }}
+                {{ .Params.articleInfo.description | safeHTML }}
                 </p>
               </article>
             {{ end }}
@@ -51,13 +48,14 @@
             {{ range .Pages }}
               <article class="home__article">
                 <a class="overlay__link" href="{{ .RelPermalink }}"></a>
-                <img src="{{ .Params.image }}" alt="Wahlkurs {{ .Title }}" class="home__img" />
-                <h3 class="home__subtitle">{{ .Title }}</h3>
+                <img 
+                  src="{{ .Params.articleInfo.image }}" 
+                  alt="Wahlkurs {{ .Params.courseInfo.title }}" 
+                  class="home__img" 
+                />
+                <h3 class="home__subtitle">{{ .Params.courseInfo.title }}</h3>
                 <p class="home__text">
-                <!-- Only display the first paragraph -->
-                {{ with findRE "<p>(.*?)</p>" .Content 1 }}
-                  {{ index . 0 | replaceRE "^<p>|</p>$" "" | safeHTML }}
-                {{ end }}
+                  {{ .Params.articleInfo.description | safeHTML }}
                 </p>
               </article>
             {{ end }}

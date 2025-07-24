@@ -6,6 +6,7 @@ backend:
   gateway_url: https://gateway.decapbridge.com
 
 # Better Decap + Bridge logo (optional)
+# TODO: Replace with your own logo URL when production-ready
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 locale: de
@@ -23,23 +24,27 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "workshop/{{slug}}"
     fields:
-      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Workshop Titel", name: "title", widget: "string" }
 
-      - label: "Veröffentlichungsdatum"
-        name: "date"
-        widget: "datetime"
-        date_format: "YYYY-MM-DD"
-        time_format: "HH:mm:ssZ"
-        default: "{{now}}"
+      - label: "Artikelinformationen"
+        name: "articleInfo"
+        widget: "object"
+        fields:
+          - label: "Veröffentlichungsdatum"
+            name: "date"
+            widget: "datetime"
+            date_format: "YYYY-MM-DD"
+            time_format: "HH:mm:ssZ"
+            default: "{{now}}"
 
-      - label: "Bild"
-        name: "image"
-        widget: "image"
+          - { label: "Bild", name: "image", widget: "image" }
 
-      - label: "Inhalt"
-        name: "body"
-        widget: "markdown"
-        modes: ["rich_text"]
+          - { label: "Beschreibung Homepage", name: "description", widget: "text" }
+
+          - label: "Inhalt"
+            name: "body"
+            widget: "markdown"
+            modes: ["rich_text"]
 
   - name: "course"
     label: "Wahlkurse"
@@ -98,6 +103,9 @@ collections:
             default: "{{now}}"
 
           - { label: "Bild", name: "image", widget: "image" }
+
+          - { label: "Beschreibung Homepage", name: "description", widget: "text" }
+
           - label: "Inhalt"
             name: "body"
             widget: "markdown"
