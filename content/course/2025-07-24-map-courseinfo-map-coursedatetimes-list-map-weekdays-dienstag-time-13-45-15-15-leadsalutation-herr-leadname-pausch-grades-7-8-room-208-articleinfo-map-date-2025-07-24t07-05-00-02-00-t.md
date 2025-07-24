@@ -7,6 +7,7 @@ courseInfo:
   leadName: Pausch
   grades: 7 - 8
   room: "208"
+  title: BC-Juniors (Bio-Chemie-Werkstatt)
 articleInfo:
   date: 2025-07-24T07:05:00+02:00
   title: BC-Juniors (Bio-Chemie-Werkstatt)
