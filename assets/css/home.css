@@ -86,15 +86,6 @@
   font-weight: 500;
 }
 
-.overlay__link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-decoration: none;
-}
-
 .home__section--logos {
   display: flex;
   flex-wrap: wrap;
