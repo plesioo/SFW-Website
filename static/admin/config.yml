@@ -142,6 +142,7 @@ collections:
     label_singular: "SFW Programm"
     folder: "content/program"
     create: true
+    limit: 1
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "program/{{slug}}"
     fields:
