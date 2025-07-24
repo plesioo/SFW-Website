@@ -73,7 +73,7 @@ collections:
             widget: "list"
             summary: "{{fields.weekdays}} {{fields.time}} Uhr"
             fields:
-              - label: "Wochentage"
+              - label: "Wochentag"
                 name: "weekdays"
                 widget: "select"
                 options:
