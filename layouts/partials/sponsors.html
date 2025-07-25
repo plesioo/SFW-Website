@@ -1,35 +1,8 @@
 <h2 class="home__title--sponsor">Unterstützt von:</h2>
 <section class="home__section--logos">
-  <img
-    src="./images/logos/gebhardt-logo.svg"
-    alt="Gebhardt Logo"
-  />
-  <img
-    src="./images/logos/hoehbauer-logo.svg"
-    alt="Höhbauer Logo"
-  />
-  <img
-    src="./images/logos/jugend-forscht-logo.svg"
-    alt="Jugend forscht Logo"
-  />
-  <img
-    src="./images/logos/nexans-logo.svg"
-    alt="Nexans Logo"
-  />
-  <img
-    src="./images/logos/novem-logo.svg"
-    alt="Novem Logo"
-  />
-  <img
-    src="./images/logos/oth-logo.svg"
-    alt="OTH Weiden Logo"
-  />
-  <img
-    src="./images/logos/tiki-logo.svg"
-    alt="Tiki Logo"
-  />
-  <img
-    src="./images/logos/uebzo-logo.svg"
-    alt="ÜBZO Logo"
-  />
-</section>
+  {{ with .Site.GetPage "sponsor" }}
+    {{ range .Pages }}
+      <img src="{{ .Params.logo }}" alt="{{ .Title }} Logo" />
+    {{ end }}
+  {{ end }}
+</section> 
