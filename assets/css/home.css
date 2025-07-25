@@ -92,7 +92,7 @@
   justify-content: center;
   gap: 2em;
   margin-block: 1em 4em;
-  max-width: 1200px;
+  max-width: 800px;
   position: relative;
 }
 
@@ -147,6 +147,10 @@
 
   .home__text {
     font-size: 1rem;
+  }
+
+  .home__section--logos {
+    max-width: 1000px;
   }
 
   .home__section--logos img {
@@ -233,6 +237,10 @@
   .home__articles {
     gap: 2em;
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .home__section--logos {
+    max-width: 1200px;
   }
 
   .home__section--logos img {
