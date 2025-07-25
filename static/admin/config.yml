@@ -146,10 +146,23 @@ collections:
     delete: false
     limit: 1
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "program/{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
 
       - label: "Bild des Programms"
         name: "programImg"
         widget: "image"
+
+  - name: "sponsor"
+    label: "Sponsoren & Partner"
+    label_singular: "Sponsor/Partner"
+    folder: "content/sponsor"
+    description: "Beim Hinzufügen eines neuen Sponsors sollte für das Logo immer eine SVG-Datei verwendet werden, um die beste Qualität zu gewährleisten."
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+    - { label: "Name", name: "title", widget: "string" }
+
+    - label: "Logo"
+      name: "logo"
+      widget: "image"
