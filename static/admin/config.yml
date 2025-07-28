@@ -37,9 +37,17 @@ collections:
             time_format: "HH:mm:ssZ"
             default: "{{now}}"
 
+          - { label: "Autor", name: "author", widget: "string" }
+
           - { label: "Bild", name: "image", widget: "image" }
 
-          - { label: "Beschreibung Homepage", name: "description", widget: "text" }
+          - {
+              label: "Beschreibung Homepage",
+              name: "description",
+              widget: "text",
+              required: false,
+              hint: "Optionaler Text für die Vorschau auf der Homepage. Wenn nicht ausgefüllt, wird der Anfang des Artikelinhalts verwendet.",
+            }
 
           - label: "Inhalt"
             name: "body"
@@ -102,9 +110,17 @@ collections:
             time_format: "HH:mm:ssZ"
             default: "{{now}}"
 
+          - { label: "Autor", name: "author", widget: "string" }
+
           - { label: "Bild", name: "image", widget: "image" }
 
-          - { label: "Beschreibung Homepage", name: "description", widget: "text" }
+          - {
+              label: "Beschreibung Homepage",
+              name: "description",
+              widget: "text",
+              required: false,
+              hint: "Optionaler Text für die Vorschau auf der Homepage. Wenn nicht ausgefüllt, wird der Anfang des Artikelinhalts verwendet.",
+            }
 
           - label: "Inhalt"
             name: "body"
@@ -161,8 +177,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-    - { label: "Name", name: "title", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
 
-    - label: "Logo"
-      name: "logo"
-      widget: "image"
+      - label: "Logo"
+        name: "logo"
+        widget: "image"

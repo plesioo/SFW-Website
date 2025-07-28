@@ -46,7 +46,7 @@
         <div class="home__articles">
           {{ with .Site.GetPage "course" }}
             {{ range .Pages }}
-              <article class="home__article">
+                <article class="home__article"></article>
                 <a class="overlay__link" href="{{ .RelPermalink }}"></a>
                 <img 
                   src="{{ .Params.articleInfo.image }}" 
@@ -55,9 +55,13 @@
                 />
                 <h3 class="home__subtitle">{{ .Params.courseInfo.title }}</h3>
                 <p class="home__text">
-                  {{ .Params.articleInfo.description | safeHTML }}
+                  {{ with .Params.articleInfo.description }}
+                  {{ . | safeHTML }}
+                  {{ else }}
+                  {{ with .Params.articleInfo.body }}{{ . | safeHTML }}{{ end }}
+                  {{ end }}
                 </p>
-              </article>
+                </article>
             {{ end }}
           {{ end }}
         </div>
