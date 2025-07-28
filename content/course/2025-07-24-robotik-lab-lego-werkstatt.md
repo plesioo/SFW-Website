@@ -14,10 +14,6 @@ articleInfo:
     
     LEGO-Werkstatt bedeutet: „Wir bauen alles, was mit den dänischen Bausteinen möglich ist“ Du kannst auch LEGO-Roboter zum Leben erwecken. Dabei lernst du konstruieren und programmieren. Wenn du Spaß am gemeinsamen Planen und Realisieren sowie Ansteuern von Sensoren hast, dann bist du hier richtig. Vielleicht gelingt es dir sogar, das Modell eines Weltraumaufzugs zu bauen.
   image: /images/articles/course.jpg
-  description: "LEGO-Werkstatt bedeutet: „Wir bauen alles, was mit den dänischen
-    Bausteinen möglich ist“ Du kannst auch LEGO-Roboter zum Leben erwecken.
-    Dabei lernst du konstruieren und programmieren. Wenn du Spaß am gemeinsamen
-    Planen und Realisieren sowie Ansteuern von Sensoren hast, dann bist du hier
-    richtig. Vielleicht gelingt es dir sogar, das Modell eines Weltraumaufzugs
-    zu bauen."
+  description: ""
+  author: Herr Heiß
 ---
