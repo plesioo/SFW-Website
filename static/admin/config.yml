@@ -49,10 +49,10 @@ collections:
               hint: "Optionaler Text für die Vorschau auf der Homepage. Wenn nicht ausgefüllt, wird der Anfang des Artikelinhalts verwendet.",
             }
 
-          - label: "Inhalt"
-            name: "body"
-            widget: "markdown"
-            modes: ["rich_text"]
+      - label: "Artikelinhalt"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
 
   - name: "course"
     label: "Wahlkurse"
@@ -122,10 +122,10 @@ collections:
               hint: "Optionaler Text für die Vorschau auf der Homepage. Wenn nicht ausgefüllt, wird der Anfang des Artikelinhalts verwendet.",
             }
 
-          - label: "Inhalt"
-            name: "body"
-            widget: "markdown"
-            modes: ["rich_text"]
+      - label: "Artikelinhalt"
+        name: "body"
+        widget: "markdown"
+        modes: ["rich_text"]
 
   - name: "sfwDay"
     label: "SFW Tage"
@@ -148,7 +148,7 @@ collections:
         name: "image"
         widget: "image"
 
-      - label: "Inhalt"
+      - label: "Artikelinhalt"
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
