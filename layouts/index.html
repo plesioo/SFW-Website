@@ -1,180 +1,190 @@
-{{ define "head" }}
-  {{- $heroCss := resources.Get "css/hero.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" />
-  {{- $homeCss := resources.Get "css/home.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}" />
-  {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
+{{ define "head" }} {{- $heroCss := resources.Get "css/hero.css" | minify |
+fingerprint -}}
+<link
+  rel="stylesheet"
+  href="{{ $heroCss.RelPermalink }}"
+  integrity="{{ $heroCss.Data.Integrity }}"
+/>
+{{- $homeCss := resources.Get "css/home.css" | minify | fingerprint -}}
+<link
+  rel="stylesheet"
+  href="{{ $homeCss.RelPermalink }}"
+  integrity="{{ $homeCss.Data.Integrity }}"
+/>
+{{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify |
+fingerprint -}}
+<link
+  rel="stylesheet"
+  href="{{ $imageViewerCss.RelPermalink }}"
+  integrity="{{ $imageViewerCss.Data.Integrity }}"
+/>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet"
-  />
-{{ end }}
-
-{{ define "main" }}
-  <main>
-    <section class="hero">
-      <div class="hero__banner-wrapper">
-        <h2 class="hero__title">Schülerforschungswerkstatt</h2>
-        <h3 class="hero__subtitle">Kepler Gymnasium Weiden</h3>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  rel="stylesheet"
+/>
+{{ end }} {{ define "main" }}
+<main>
+  <section class="hero">
+    <div class="hero__banner-wrapper">
+      <h2 class="hero__title">Schülerforschungswerkstatt</h2>
+      <h3 class="hero__subtitle">Kepler Gymnasium Weiden</h3>
+    </div>
+  </section>
+  <div class="home">
+    <section id="workshops">
+      <h2 class="home__title">Workshops</h2>
+      <div class="home__articles">
+        {{ with .Site.GetPage "workshop" }} {{ range .Pages }}
+        <article class="home__article">
+          <a class="overlay__link" href="{{ .RelPermalink }}"></a>
+          <img
+            src="{{ .Params.articleInfo.image }}"
+            alt="Workshop {{ .Title }}"
+            class="home__img"
+          />
+          <h3 class="home__subtitle">{{ .Title }}</h3>
+          <p class="home__text">
+            {{ with .Params.articleInfo.description }} {{ . | safeHTML }} {{
+            else }} {{ with .Params.articleInfo.body }}{{ . | safeHTML }}{{ end
+            }} {{ end }}
+          </p>
+        </article>
+        {{ end }} {{ end }}
       </div>
     </section>
-    <div class="home">
-      <section id="workshops">
-        <h2 class="home__title">Workshops</h2>
-        <div class="home__articles">
-          {{ with .Site.GetPage "workshop" }}
-            {{ range .Pages }}
-              <article class="home__article">
-                <a class="overlay__link" href="{{ .RelPermalink }}"></a>
-                <img src="{{ .Params.articleInfo.image }}" alt="Workshop {{ .Title }}" class="home__img" />
-                <h3 class="home__subtitle">{{ .Title }}</h3>
-                <p class="home__text">
-                {{ .Params.articleInfo.description | safeHTML }}
-                </p>
-              </article>
-            {{ end }}
-          {{ end }}
-        </div>
-      </section>
-      <section id="courses">
-        <h2 class="home__title">Wahlkurse</h2>
-        <div class="home__articles">
-          {{ with .Site.GetPage "course" }}
-            {{ range .Pages }}
-                <article class="home__article"></article>
-                <a class="overlay__link" href="{{ .RelPermalink }}"></a>
-                <img 
-                  src="{{ .Params.articleInfo.image }}" 
-                  alt="Wahlkurs {{ .Params.courseInfo.title }}" 
-                  class="home__img" 
-                />
-                <h3 class="home__subtitle">{{ .Params.courseInfo.title }}</h3>
-                <p class="home__text">
-                  {{ with .Params.articleInfo.description }}
-                    {{ . | safeHTML }}
-                  {{ else }}
-                    {{ with .Params.articleInfo.body }}{{ . | safeHTML }}{{ end }}
-                  {{ end }}
-                </p>
-                </article>
-            {{ end }}
-          {{ end }}
-        </div>
-      </section>
-      <section id="program" class="home__section">
-        <div class="home__container--wheels">
+    <section id="courses">
+      <h2 class="home__title">Wahlkurse</h2>
+      <div class="home__articles">
+        {{ with .Site.GetPage "course" }} {{ range .Pages }}
+        <article class="home__article">
+          <a class="overlay__link" href="{{ .RelPermalink }}"></a>
           <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel1"
-            alt=""
-            aria-hidden="true"
+            src="{{ .Params.articleInfo.image }}"
+            alt="Wahlkurs {{ .Params.courseInfo.title }}"
+            class="home__img"
           />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel2"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel3"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel4"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel5"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel6"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel7"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src="./images/page/gear.svg"
-            class="home__img--wheel wheel8"
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
-        <h2 class="home__title">Unser Programm</h2>
-        {{ with .Site.GetPage "program" }}
-          <img
-            src="{{ (index .Pages 0).Params.programImg }}"
-            alt="Programm"
-            class="home__img--program"
-            id="image-viewer-trigger"
-            tabindex="0"
-          />
-        </section>
-        <div
-          class="image-viewer"
-          id="image-viewer"
-          tabindex="-1"
-          aria-modal="true"
-          role="dialog"
-        >
-          <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
-          <div class="image-viewer__container">
-            <img
-              src="{{ (index .Pages 0).Params.programImg }}"
-              alt="Programm"
-              class="image-viewer__img"
-              id="image-viewer-img"
-            />
-        {{ end }}
-        </div>
-        <button
-          class="image-viewer__close"
-          id="image-viewer-close"
-          aria-label="Programm schließen"
-        >
-          &times;
-        </button>
+          <h3 class="home__subtitle">{{ .Params.courseInfo.title }}</h3>
+          <p class="home__text">
+            {{ with .Params.articleInfo.description }} {{ . | safeHTML }} {{
+            else }} {{ with .Params.articleInfo.body }}{{ . | safeHTML }}{{ end
+            }} {{ end }}
+          </p>
+        </article>
+        {{ end }} {{ end }}
       </div>
-      {{ partial "sponsors.html" . }}
-      <h2 class="home__title">Folge uns auf Instagram:</h2>
-      <section class="home__section--insta">
-        <script
-          src="https://cdn.commoninja.com/sdk/latest/commonninja.js"
-          defer
-        ></script>
-        <div
-          class="commonninja_component pid-85aba765-8fae-4ca9-9d33-fa1ae3363392"
-        ></div>
-      </section>
+    </section>
+    <section id="program" class="home__section">
+      <div class="home__container--wheels">
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel1"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel2"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel3"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel4"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel5"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel6"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel7"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          src="./images/page/gear.svg"
+          class="home__img--wheel wheel8"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+      <h2 class="home__title">Unser Programm</h2>
+      {{ with .Site.GetPage "program" }}
+      <img
+        src="{{ (index .Pages 0).Params.programImg }}"
+        alt="Programm"
+        class="home__img--program"
+        id="image-viewer-trigger"
+        tabindex="0"
+      />
+    </section>
+    <div
+      class="image-viewer"
+      id="image-viewer"
+      tabindex="-1"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+      <div class="image-viewer__container">
+        <img
+          src="{{ (index .Pages 0).Params.programImg }}"
+          alt="Programm"
+          class="image-viewer__img"
+          id="image-viewer-img"
+        />
+        {{ end }}
+      </div>
+      <button
+        class="image-viewer__close"
+        id="image-viewer-close"
+        aria-label="Programm schließen"
+      >
+        &times;
+      </button>
     </div>
-  </main>
-{{ end }}
-{{ define "scripts" }}
-  {{ $imageViewerJS := resources.Get "js/image-viewer.js" | minify | fingerprint }}
-  <script
-    src="{{ $imageViewerJS.RelPermalink }}"
-    integrity="{{ $imageViewerJS.Data.Integrity }}"
-  ></script>
-  {{ $indexJS := resources.Get "js/index.js" | minify | fingerprint }}
-  <script
-    src="{{ $indexJS.RelPermalink }}"
-    integrity="{{ $indexJS.Data.Integrity }}"
-  ></script>
+    {{ partial "sponsors.html" . }}
+    <h2 class="home__title">Folge uns auf Instagram:</h2>
+    <section class="home__section--insta">
+      <script
+        src="https://cdn.commoninja.com/sdk/latest/commonninja.js"
+        defer
+      ></script>
+      <div
+        class="commonninja_component pid-85aba765-8fae-4ca9-9d33-fa1ae3363392"
+      ></div>
+    </section>
+  </div>
+</main>
+{{ end }} {{ define "scripts" }} {{ $imageViewerJS := resources.Get
+"js/image-viewer.js" | minify | fingerprint }}
+<script
+  src="{{ $imageViewerJS.RelPermalink }}"
+  integrity="{{ $imageViewerJS.Data.Integrity }}"
+></script>
+{{ $indexJS := resources.Get "js/index.js" | minify | fingerprint }}
+<script
+  src="{{ $indexJS.RelPermalink }}"
+  integrity="{{ $indexJS.Data.Integrity }}"
+></script>
 {{ end }}
