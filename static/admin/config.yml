@@ -53,6 +53,19 @@ collections:
         name: "body"
         widget: "markdown"
         modes: ["rich_text"]
+        buttons:
+          [
+            "bold",
+            "italic",
+            "code",
+            "link",
+            "heading-one",
+            "heading-two",
+            "heading-three",
+            "quote",
+            "bulleted-list",
+            "numbered-list",
+          ]
 
   - name: "course"
     label: "Wahlkurse"
