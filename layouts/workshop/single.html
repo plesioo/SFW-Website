@@ -1,0 +1,22 @@
+{{ define "head" }}
+  {{- $singleCss := resources.Get "css/single.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
+{{ end }}
+
+{{ define "main" }}
+  <main>
+    <div class="container">
+      <h1 class="article__title">{{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+      <div class="article__container">
+          <span>{{ .Params.articleInfo.author }}</span>
+          <time
+          datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+      </div>
+      <img class="article__image" src="{{ .Params.articleInfo.image }}" alt="" />
+      <div class="markdown__container">{{ .Content }}</div>
+    </div>
+  </main>
+{{ end }}
+

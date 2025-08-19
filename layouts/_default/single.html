@@ -1,8 +1,10 @@
 {{ define "main" }}
-  <main>
-    <h1>{{ .Title }}</h1>
-    <p class="date">{{ .Date }}</p>
-    <p class="description">{{ .Params.description }}</p>
-    <article class="content">{{ .Content }}</article>
-  </main>
+<main>
+  <h1>
+    {{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+  </h1>
+  <p class="date">{{ .Date }}</p>
+  <p class="description">{{ .Params.articleInfo.body }}</p>
+  <article class="content">{{ .Content }}</article>
+</main>
 {{ end }}
