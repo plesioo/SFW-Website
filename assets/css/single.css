@@ -1,6 +1,6 @@
 main {
   margin-block: 2em;
-  color: black;
+  color: #111827;
 }
 
 .container {
@@ -41,8 +41,8 @@ main {
 /* Markdown styles */
 
 .markdown__container {
-  line-height: 1.75;
-  color: #1f2328;
+  line-height: 1.875;
+  color: #374151;
   word-wrap: break-word;
 }
 
