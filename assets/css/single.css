@@ -41,7 +41,7 @@ main {
 /* Markdown styles */
 
 .markdown__container {
-  line-height: 1.5;
+  line-height: 1.75;
   color: #1f2328;
   word-wrap: break-word;
 }
