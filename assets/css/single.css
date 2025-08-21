@@ -29,8 +29,10 @@ main {
 
 .article__image {
   margin-inline: auto;
-  max-height: 800px;
+  max-height: 750px;
   object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .article__image,

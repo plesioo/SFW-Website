@@ -135,14 +135,13 @@ fingerprint -}}
         id="image-viewer-trigger"
         tabindex="0"
       />
-    </section>
-    <div
-      class="image-viewer"
-      id="image-viewer"
-      tabindex="-1"
-      aria-modal="true"
-      role="dialog"
-    >
+      <div
+        class="image-viewer"
+        id="image-viewer"
+        tabindex="-1"
+        aria-modal="true"
+        role="dialog"
+      >
       <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
       <div class="image-viewer__container">
         <img
@@ -160,7 +159,7 @@ fingerprint -}}
       >
         &times;
       </button>
-    </div>
+    </section>
     {{ partial "sponsors.html" . }}
     <h2 class="home__title">Folge uns auf Instagram:</h2>
     <section class="home__section--insta">
@@ -174,7 +173,8 @@ fingerprint -}}
     </section>
   </div>
 </main>
-{{ end }} {{ define "scripts" }} {{ $imageViewerJS := resources.Get
+{{ end }} {{ define "scripts" }} 
+{{ $imageViewerJS := resources.Get
 "js/image-viewer.js" | minify | fingerprint }}
 <script
   src="{{ $imageViewerJS.RelPermalink }}"

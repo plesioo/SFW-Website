@@ -1,6 +1,8 @@
 {{ define "head" }}
   {{- $singleCss := resources.Get "css/single.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
+  {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
 {{ end }}
 
 {{ define "main" }}
@@ -14,9 +16,47 @@
           {{ .Date.Format "Jan 2, 2006" }}
         </time>
       </div>
-      <img class="article__image" src="{{ .Params.articleInfo.image }}" alt="" />
+      <img
+        src="{{ .Params.articleInfo.image }}"
+        alt="Programm"
+        class="article__image"
+        id="image-viewer-trigger"
+        tabindex="0"
+      />
+      <div
+        class="image-viewer"
+        id="image-viewer"
+        tabindex="-1"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+        <div class="image-viewer__container">
+          <img
+            src="{{ .Params.articleInfo.image }}"
+            alt="Programm"
+            class="image-viewer__img"
+            id="image-viewer-img"
+          />
+        </div>
+        <button
+          class="image-viewer__close"
+          id="image-viewer-close"
+          aria-label="Programm schließen"
+        >
+          &times;
+        </button>
+      </div>
       <div class="markdown__container">{{ .Content }}</div>
     </div>
   </main>
+{{ end }}
+{{ define "scripts" }} 
+{{ $imageViewerJS := resources.Get
+"js/image-viewer.js" | minify | fingerprint }}
+<script
+  src="{{ $imageViewerJS.RelPermalink }}"
+  integrity="{{ $imageViewerJS.Data.Integrity }}"
+></script>
 {{ end }}
 
