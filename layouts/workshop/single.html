@@ -16,13 +16,18 @@
           {{ .Date.Format "Jan 2, 2006" }}
         </time>
       </div>
-      <img
-        src="{{ .Params.articleInfo.image }}"
-        alt="Programm"
-        class="article__image"
-        id="image-viewer-trigger"
-        tabindex="0"
-      />
+      <figure class="article__figure">
+        <img
+          src="{{ .Params.articleInfo.image }}"
+          alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop Bild{{ end }}"
+          class="article__image"
+          id="image-viewer-trigger"
+          tabindex="0"
+        />
+        {{ with .Params.articleInfo.caption }}
+          <figcaption class="article__caption">{{ . }}</figcaption>
+        {{ end }}
+      </figure>
       <div
         class="image-viewer"
         id="image-viewer"
@@ -34,7 +39,7 @@
         <div class="image-viewer__container">
           <img
             src="{{ .Params.articleInfo.image }}"
-            alt="Programm"
+            alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop image{{ end }}"
             class="image-viewer__img"
             id="image-viewer-img"
           />

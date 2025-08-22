@@ -41,6 +41,11 @@ collections:
 
           - { label: "Bild", name: "image", widget: "image" }
 
+          - label: "Bildunterschrift"
+            name: "caption"
+            widget: "string"
+            required: false
+
           - {
               label: "Beschreibung Homepage",
               name: "description",
@@ -126,6 +131,11 @@ collections:
           - { label: "Autor", name: "author", widget: "string" }
 
           - { label: "Bild", name: "image", widget: "image" }
+
+          - label: "Bildunterschrift"
+            name: "caption"
+            widget: "string"
+            required: false
 
           - {
               label: "Beschreibung Homepage",
