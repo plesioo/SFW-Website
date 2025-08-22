@@ -142,6 +142,15 @@ table {
   --background-color: #f8f9fc;
   --heading-text-color: #000000;
 
+  /* Article styles */
+  --article-text: #111827;
+  --article-meta-text: #6b6b6b;
+  --article-body-text: #374151;
+  --article-border: #d1d9e0;
+  --article-code-bg: #f6f8fa;
+  --article-blockquote-text: #59636e;
+  --article-link: #0969da;
+
   scroll-behavior: smooth;
 }
 
