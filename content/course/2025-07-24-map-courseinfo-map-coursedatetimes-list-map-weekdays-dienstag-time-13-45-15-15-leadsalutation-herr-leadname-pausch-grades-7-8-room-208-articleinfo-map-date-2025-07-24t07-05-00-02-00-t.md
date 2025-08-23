@@ -1,4 +1,5 @@
 ---
+title: BC-Juniors (Bio-Chemie-Werkstatt)
 courseInfo:
   courseDatetimes:
     - weekdays: Dienstag
