@@ -11,10 +11,13 @@
       <h1 class="article__title">{{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
       <div class="article__container">
           <span>{{ .Params.articleInfo.author }}</span>
-          <time
-          datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "Jan 2, 2006" }}
-        </time>
+          {{ with .Params.articleInfo.date }}
+            {{ $d := time . }}
+            <time
+              datetime="{{ $d.Format "2006-01-02" }}">
+              {{ $d.Format "Jan 2, 2006" }}
+            </time>
+          {{ end }}
       </div>
       <figure class="article__figure">
         <img
