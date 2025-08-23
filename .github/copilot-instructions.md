@@ -14,3 +14,5 @@ Use **rem** for font sizes
 Use **em** for margin, padding, gaps and so on
 Use **%** for width.
 Use **px** for things like border radius
+
+Never use comments
