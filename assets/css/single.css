@@ -65,10 +65,7 @@ main {
 /* Headings */
 .markdown__container h1,
 .markdown__container h2,
-.markdown__container h3,
-.markdown__container h4,
-.markdown__container h5,
-.markdown__container h6 {
+.markdown__container h3 {
   margin-top: 0.5em;
   margin-bottom: 0.75em;
   font-weight: 600;
@@ -276,8 +273,7 @@ main {
   .markdown__container h1,
   .markdown__container h2,
   .markdown__container h3 {
-    margin-top: 0.75em;
-    margin-bottom: 1em;
+    margin-top: 1em;
   }
 
   .markdown__container h1 {

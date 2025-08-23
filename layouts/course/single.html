@@ -1,0 +1,78 @@
+{{ define "head" }}
+  {{- $singleCss := resources.Get "css/single.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
+  {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
+{{ end }}
+
+{{ define "main" }}
+  <main>
+    <div class="container">
+      <h1 class="article__title">{{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+      <div class="article__container">
+          <span>{{ .Params.articleInfo.author }}</span>
+          {{ with .Params.articleInfo.date }}
+            <!-- turn string to time -->
+            {{ $d := time . }}
+            <time class="article__date" datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "Jan 2, 2006" }}</time>
+          {{ end }}
+      </div>
+      <figure class="article__figure">
+        <img
+          src="{{ .Params.articleInfo.image }}"
+          alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop Bild{{ end }}"
+          class="article__image"
+          id="image-viewer-trigger"
+          tabindex="0"
+        />
+        {{ with .Params.articleInfo.caption }}
+          <figcaption class="article__caption">{{ . }}</figcaption>
+        {{ end }}
+      </figure>
+      <div
+        class="image-viewer"
+        id="image-viewer"
+        tabindex="-1"
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+        <div class="image-viewer__container">
+          <img
+            src="{{ .Params.articleInfo.image }}"
+            alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop image{{ end }}"
+            class="image-viewer__img"
+            id="image-viewer-img"
+          />
+        </div>
+        <button
+          class="image-viewer__close"
+          id="image-viewer-close"
+          aria-label="Programm schließen"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="markdown__container">
+        <h2>Kursinformationen</h2>
+        <ul>
+          <li>Leitung: {{ .Params.courseInfo.leadSalutation }} {{ .Params.courseInfo.leadName }}</li>
+          <li>Klassenstufen: {{ .Params.courseInfo.grades }}</li>
+          <li>Raum: {{ .Params.courseInfo.room }}</li>
+          <li>Termine: {{ range .Params.courseInfo.courseDatetimes }}{{ .weekdays }} {{ .time }}{{ end }}</li>
+        </ul>
+        <h2>Kursinhalt</h2>
+        {{ .Content }}
+      </div>
+    </div>
+  </main>
+{{ end }}
+{{ define "scripts" }} 
+{{ $imageViewerJS := resources.Get
+"js/image-viewer.js" | minify | fingerprint }}
+<script
+  src="{{ $imageViewerJS.RelPermalink }}"
+  integrity="{{ $imageViewerJS.Data.Integrity }}"
+></script>
+{{ end }}
+
