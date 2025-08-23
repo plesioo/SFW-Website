@@ -8,7 +8,6 @@ courseInfo:
   leadName: Koller
   grades: 9 - 10
   room: "108"
-  title: Kreative Fotografie (Fotografie-Werkstatt)
 articleInfo:
   date: 2025-07-24T07:05:00+02:00
   image: /images/articles/course-4.jpg

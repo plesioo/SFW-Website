@@ -63,10 +63,10 @@ fingerprint -}}
           <a class="overlay__link" href="{{ .RelPermalink }}"></a>
           <img
             src="{{ .Params.articleInfo.image }}"
-            alt="Wahlkurs {{ .Params.courseInfo.title }}"
+            alt="Wahlkurs {{ .Title }}"
             class="home__img"
           />
-          <h3 class="home__subtitle">{{ .Params.courseInfo.title }}</h3>
+          <h3 class="home__subtitle">{{ .Title }}</h3>
           <p class="home__text">
             {{ with .Params.articleInfo.description }} {{ . | safeHTML }} {{
             else }} {{ with .Content }}{{ . | plainify }}{{ end }} {{ end }}

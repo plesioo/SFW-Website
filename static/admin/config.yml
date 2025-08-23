@@ -81,11 +81,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     preview_path: "course/{{slug}}"
     fields:
+      - { label: "Kursname", name: "title", widget: "string" }
+      
       - label: "Kursinformationen"
         name: "courseInfo"
         widget: "object"
         fields:
-          - { label: "Kursname", name: "title", widget: "string" }
           - label: "Anrede Leitung"
             name: "leadSalutation"
             widget: "select"
