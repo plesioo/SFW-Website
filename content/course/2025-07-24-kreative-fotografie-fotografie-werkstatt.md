@@ -1,4 +1,5 @@
 ---
+title: Kreative Fotografie (Fotografie-Werkstatt)
 courseInfo:
   courseDatetimes:
     - weekdays: Montag
