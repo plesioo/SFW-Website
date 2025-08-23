@@ -1,4 +1,5 @@
 ---
+title: Coding-Club (Programmier-Werkstatt 2)
 courseInfo:
   courseDatetimes:
     - weekdays: Mittwoch

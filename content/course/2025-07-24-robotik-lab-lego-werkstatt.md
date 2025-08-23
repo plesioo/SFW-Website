@@ -1,4 +1,5 @@
 ---
+title: Robotik-Lab (LEGO-Werkstatt)
 courseInfo:
   leadSalutation: Herr
   leadName: Heiß
