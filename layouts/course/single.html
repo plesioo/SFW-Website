@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
   {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
+  <script src="https://kit.fontawesome.com/6a1cb3174c.js" crossorigin="anonymous"></script>
 {{ end }}
 
 {{ define "main" }}
@@ -55,11 +56,11 @@
       </div>
       <div class="markdown__container">
         <h2>Kursinformationen</h2>
-        <ul>
-          <li>Leitung: {{ .Params.courseInfo.leadSalutation }} {{ .Params.courseInfo.leadName }}</li>
-          <li>Klassenstufen: {{ .Params.courseInfo.grades }}</li>
-          <li>Raum: {{ .Params.courseInfo.room }}</li>
-          <li>Termine: {{ range .Params.courseInfo.courseDatetimes }}{{ .weekdays }} {{ .time }}{{ end }}</li>
+        <ul class="markdown__container--info-list">
+          <li><i class="fa-solid fa-user"></i>Leitung: {{ .Params.courseInfo.leadSalutation }} {{ .Params.courseInfo.leadName }}</li>
+          <li><i class="fa-solid fa-graduation-cap"></i>Klassenstufen: {{ .Params.courseInfo.grades }}</li>
+          <li><i class="fa-solid fa-house"></i>Raum: {{ .Params.courseInfo.room }}</li>
+          <li><i class="fa-solid fa-calendar-days"></i>Termine: {{ range .Params.courseInfo.courseDatetimes }}{{ .weekdays }} {{ .time }}{{ end }}</li>
         </ul>
         <h2>Kursinhalt</h2>
         {{ .Content }}
