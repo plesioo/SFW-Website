@@ -143,23 +143,24 @@ fingerprint -}}
         aria-modal="true"
         role="dialog"
       >
-      <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
-      <div class="image-viewer__container">
-        <img
-          src="{{ (index .Pages 0).Params.programImg }}"
-          alt="Programm"
-          class="image-viewer__img"
-          id="image-viewer-img"
-        />
-        {{ end }}
+        <div class="image-viewer__overlay" id="image-viewer-overlay"></div>
+        <div class="image-viewer__container">
+          <img
+            src="{{ (index .Pages 0).Params.programImg }}"
+            alt="Programm"
+            class="image-viewer__img"
+            id="image-viewer-img"
+          />
+        </div>
+        <button
+          class="image-viewer__close"
+          id="image-viewer-close"
+          aria-label="Programm schließen"
+        >
+          &times;
+        </button>
       </div>
-      <button
-        class="image-viewer__close"
-        id="image-viewer-close"
-        aria-label="Programm schließen"
-      >
-        &times;
-      </button>
+      {{ end }}
     </section>
     {{ partial "sponsors.html" . }}
     <h2 class="home__title">Folge uns auf Instagram:</h2>
@@ -174,8 +175,7 @@ fingerprint -}}
     </section>
   </div>
 </main>
-{{ end }} {{ define "scripts" }} 
-{{ $imageViewerJS := resources.Get
+{{ end }} {{ define "scripts" }} {{ $imageViewerJS := resources.Get
 "js/image-viewer.js" | minify | fingerprint }}
 <script
   src="{{ $imageViewerJS.RelPermalink }}"
