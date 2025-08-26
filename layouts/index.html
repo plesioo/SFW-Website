@@ -35,10 +35,11 @@ fingerprint -}}
     </div>
   </section>
   <div class="home">
+    {{ $limit := $.Site.Params.maxHomepageArticlesLimit }}
     <section id="workshops">
       <h2 class="home__title">Workshops</h2>
       <div class="home__articles">
-        {{ with .Site.GetPage "workshop" }} {{ range .Pages }}
+        {{ with .Site.GetPage "workshop" }} {{ range first $limit .Pages }}
         <article class="home__article">
           <a class="overlay__link" href="{{ .RelPermalink }}"></a>
           <img
@@ -58,7 +59,7 @@ fingerprint -}}
     <section id="courses">
       <h2 class="home__title">Wahlkurse</h2>
       <div class="home__articles">
-        {{ with .Site.GetPage "course" }} {{ range .Pages }}
+        {{ with .Site.GetPage "course" }} {{ range first $limit .Pages }}
         <article class="home__article">
           <a class="overlay__link" href="{{ .RelPermalink }}"></a>
           <img

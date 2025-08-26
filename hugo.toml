@@ -2,3 +2,6 @@ baseURL = 'https://example.org/'
 languageCode = 'de'
 title = 'SFW'
 timeZone = 'Europe/Berlin'
+
+[params]
+    maxHomepageArticlesLimit = 8
