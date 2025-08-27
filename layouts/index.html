@@ -44,7 +44,7 @@
         <h2 class="home__title">Workshops</h2>
         <div class="home__articles">
           {{ with .Site.GetPage "workshop" }}
-            {{ range first $limit .Pages }}
+            {{ range first $limit .Pages.ByDate.Reverse }}
               <article class="home__article">
                 <a class="overlay__link" href="{{ .RelPermalink }}"></a>
                 <img
@@ -69,7 +69,7 @@
         <h2 class="home__title">Wahlkurse</h2>
         <div class="home__articles">
           {{ with .Site.GetPage "course" }}
-            {{ range first $limit .Pages }}
+            {{ range first $limit .Pages.ByDate.Reverse }}
               <article class="home__article">
                 <a class="overlay__link" href="{{ .RelPermalink }}"></a>
                 <img
