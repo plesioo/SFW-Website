@@ -94,12 +94,14 @@
             {{ .Params.courseInfo.grades }}
           </li>
           <li>
-            <i class="fa-solid fa-house"></i>Raum: {{ .Params.courseInfo.room }}
+            <i class="fa-solid fa-house"></i>Raum:
+            {{ .Params.courseInfo.room }}
           </li>
           <li>
             <i class="fa-solid fa-calendar-days"></i>Termine:
             {{ range .Params.courseInfo.courseDatetimes }}
-              {{ .weekdays }} {{ .time }}
+              {{ .weekdays }}
+              {{ .time }}
             {{ end }}
           </li>
         </ul>

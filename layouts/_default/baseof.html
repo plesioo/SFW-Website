@@ -6,7 +6,8 @@
     {{ end }}
   </head>
   <body>
-    {{ partial "header.html" . }} {{ block "main" . }}{{ end }}
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
     {{ block "scripts" . }}{{ end }}
   </body>
