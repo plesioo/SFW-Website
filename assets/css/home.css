@@ -44,7 +44,9 @@
 .home__article:hover,
 .home__article:focus {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s, background-color 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background-color 0.3s;
   background-color: var(--primary-color-hover);
 }
 

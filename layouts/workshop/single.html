@@ -1,28 +1,45 @@
 {{ define "head" }}
   {{- $singleCss := resources.Get "css/single.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
+  <link
+    rel="stylesheet"
+    href="{{ $singleCss.RelPermalink }}"
+    integrity="{{ $singleCss.Data.Integrity }}"
+  />
   {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
+  <link
+    rel="stylesheet"
+    href="{{ $imageViewerCss.RelPermalink }}"
+    integrity="{{ $imageViewerCss.Data.Integrity }}"
+  />
 {{ end }}
 
 {{ define "main" }}
   <main>
     <div class="container">
-      <h1 class="article__title">{{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+      <h1 class="article__title">
+        {{ with .Params.courseInfo.title }}
+          {{ . }}
+        {{ else }}
+          {{ .Title }}
+        {{ end }}
+      </h1>
       <div class="article__container">
-          <span>{{ .Params.articleInfo.author }}</span>
-          {{ with .Params.articleInfo.date }}
-            {{ $d := time . }}
-            <time
-              datetime="{{ $d.Format "2006-01-02" }}">
-              {{ $d.Format "Jan 2, 2006" }}
-            </time>
-          {{ end }}
+        <span>{{ .Params.articleInfo.author }}</span>
+        {{ with .Params.articleInfo.date }}
+          {{ $d := time . }}
+          <time datetime="{{ $d.Format "2006-01-02" }}">
+            {{ $d.Format "Jan 2, 2006" }}
+          </time>
+        {{ end }}
       </div>
       <figure class="article__figure">
         <img
           src="{{ .Params.articleInfo.image }}"
-          alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop Bild{{ end }}"
+          alt="{{ with .Params.articleInfo.caption }}
+            {{ . }}
+          {{ else }}
+            Workshop Bild
+          {{ end }}"
           class="article__image"
           id="image-viewer-trigger"
           tabindex="0"
@@ -42,7 +59,11 @@
         <div class="image-viewer__container">
           <img
             src="{{ .Params.articleInfo.image }}"
-            alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop image{{ end }}"
+            alt="{{ with .Params.articleInfo.caption }}
+              {{ . }}
+            {{ else }}
+              Workshop image
+            {{ end }}"
             class="image-viewer__img"
             id="image-viewer-img"
           />
@@ -59,12 +80,12 @@
     </div>
   </main>
 {{ end }}
-{{ define "scripts" }} 
-{{ $imageViewerJS := resources.Get
-"js/image-viewer.js" | minify | fingerprint }}
-<script
-  src="{{ $imageViewerJS.RelPermalink }}"
-  integrity="{{ $imageViewerJS.Data.Integrity }}"
-></script>
+{{ define "scripts" }}
+  {{ $imageViewerJS := resources.Get
+    "js/image-viewer.js" | minify | fingerprint
+  }}
+  <script
+    src="{{ $imageViewerJS.RelPermalink }}"
+    integrity="{{ $imageViewerJS.Data.Integrity }}"
+  ></script>
 {{ end }}
-

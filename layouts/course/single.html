@@ -1,27 +1,50 @@
 {{ define "head" }}
   {{- $singleCss := resources.Get "css/single.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $singleCss.RelPermalink }}" integrity="{{ $singleCss.Data.Integrity }}" />
+  <link
+    rel="stylesheet"
+    href="{{ $singleCss.RelPermalink }}"
+    integrity="{{ $singleCss.Data.Integrity }}"
+  />
   {{- $imageViewerCss := resources.Get "css/image-viewer.css" | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $imageViewerCss.RelPermalink }}" integrity="{{ $imageViewerCss.Data.Integrity }}" />
-  <script src="https://kit.fontawesome.com/6a1cb3174c.js" crossorigin="anonymous"></script>
+  <link
+    rel="stylesheet"
+    href="{{ $imageViewerCss.RelPermalink }}"
+    integrity="{{ $imageViewerCss.Data.Integrity }}"
+  />
+  <script
+    src="https://kit.fontawesome.com/6a1cb3174c.js"
+    crossorigin="anonymous"
+  ></script>
 {{ end }}
 
 {{ define "main" }}
   <main>
     <div class="container">
-      <h1 class="article__title">{{ with .Params.courseInfo.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+      <h1 class="article__title">
+        {{ with .Params.courseInfo.title }}
+          {{ . }}
+        {{ else }}
+          {{ .Title }}
+        {{ end }}
+      </h1>
       <div class="article__container">
-          <span>{{ .Params.articleInfo.author }}</span>
-          {{ with .Params.articleInfo.date }}
-            <!-- turn string to time -->
-            {{ $d := time . }}
-            <time class="article__date" datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "Jan 2, 2006" }}</time>
-          {{ end }}
+        <span>{{ .Params.articleInfo.author }}</span>
+        {{ with .Params.articleInfo.date }}
+          <!-- turn string to time -->
+          {{ $d := time . }}
+          <time class="article__date" datetime="{{ $d.Format "2006-01-02" }}"
+            >{{ $d.Format "Jan 2, 2006" }}</time
+          >
+        {{ end }}
       </div>
       <figure class="article__figure">
         <img
           src="{{ .Params.articleInfo.image }}"
-          alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop Bild{{ end }}"
+          alt="{{ with .Params.articleInfo.caption }}
+            {{ . }}
+          {{ else }}
+            Workshop Bild
+          {{ end }}"
           class="article__image"
           id="image-viewer-trigger"
           tabindex="0"
@@ -41,7 +64,11 @@
         <div class="image-viewer__container">
           <img
             src="{{ .Params.articleInfo.image }}"
-            alt="{{ with .Params.articleInfo.caption }}{{ . }}{{ else }}Workshop image{{ end }}"
+            alt="{{ with .Params.articleInfo.caption }}
+              {{ . }}
+            {{ else }}
+              Workshop image
+            {{ end }}"
             class="image-viewer__img"
             id="image-viewer-img"
           />
@@ -57,10 +84,24 @@
       <div class="markdown__container">
         <h2>Kursinformationen</h2>
         <ul class="markdown__container--info-list">
-          <li><i class="fa-solid fa-user"></i>Leitung: {{ .Params.courseInfo.leadSalutation }} {{ .Params.courseInfo.leadName }}</li>
-          <li><i class="fa-solid fa-graduation-cap"></i>Klassenstufen: {{ .Params.courseInfo.grades }}</li>
-          <li><i class="fa-solid fa-house"></i>Raum: {{ .Params.courseInfo.room }}</li>
-          <li><i class="fa-solid fa-calendar-days"></i>Termine: {{ range .Params.courseInfo.courseDatetimes }}{{ .weekdays }} {{ .time }}{{ end }}</li>
+          <li>
+            <i class="fa-solid fa-user"></i>Leitung:
+            {{ .Params.courseInfo.leadSalutation }}
+            {{ .Params.courseInfo.leadName }}
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>Klassenstufen:
+            {{ .Params.courseInfo.grades }}
+          </li>
+          <li>
+            <i class="fa-solid fa-house"></i>Raum: {{ .Params.courseInfo.room }}
+          </li>
+          <li>
+            <i class="fa-solid fa-calendar-days"></i>Termine:
+            {{ range .Params.courseInfo.courseDatetimes }}
+              {{ .weekdays }} {{ .time }}
+            {{ end }}
+          </li>
         </ul>
         <h2>Kursinhalt</h2>
         {{ .Content }}
@@ -68,12 +109,12 @@
     </div>
   </main>
 {{ end }}
-{{ define "scripts" }} 
-{{ $imageViewerJS := resources.Get
-"js/image-viewer.js" | minify | fingerprint }}
-<script
-  src="{{ $imageViewerJS.RelPermalink }}"
-  integrity="{{ $imageViewerJS.Data.Integrity }}"
-></script>
+{{ define "scripts" }}
+  {{ $imageViewerJS := resources.Get
+    "js/image-viewer.js" | minify | fingerprint
+  }}
+  <script
+    src="{{ $imageViewerJS.RelPermalink }}"
+    integrity="{{ $imageViewerJS.Data.Integrity }}"
+  ></script>
 {{ end }}
-

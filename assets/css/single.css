@@ -109,8 +109,14 @@ main {
 /* Code */
 .markdown__container code,
 .markdown__container pre {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 85%;
   background-color: var(--article-code-bg);
   border-radius: 6px;
