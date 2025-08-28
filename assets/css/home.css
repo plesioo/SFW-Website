@@ -278,8 +278,8 @@
 @media (min-width: 1800px) {
   .home__articles {
     justify-items: center;
-    gap: 1.5em;
-    width: 82.5%;
+    gap: 2em;
+    width: 90%;
     margin-inline: auto;
   }
 
