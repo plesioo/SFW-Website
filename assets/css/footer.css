@@ -37,6 +37,11 @@ footer a {
   height: 24px;
 }
 
+footer a:hover,
+footer a:focus {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .footer__text--author {
   font-size: 0.75rem;
   line-height: 1.5;
