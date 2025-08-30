@@ -197,7 +197,7 @@ collections:
     label: "Sponsoren & Partner"
     label_singular: "Sponsor/Partner"
     folder: "content/sponsor"
-    description: "Beim Hinzufügen eines neuen Sponsors sollte für das Logo immer eine SVG-Datei verwendet werden, um die beste Qualität zu gewährleisten."
+    description: "Beim Hinzufügen eines neuen Sponsoren sollte für das Logo immer eine SVG-Datei verwendet werden, um die beste Qualität zu gewährleisten."
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
