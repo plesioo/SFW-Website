@@ -7,7 +7,15 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
+    
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: 'latest'
 
+    - name: Build
+      run: hugo --minify
+    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
