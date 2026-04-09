@@ -17,10 +17,8 @@
     href="{{ $markdownCss.RelPermalink }}"
     integrity="{{ $markdownCss.Data.Integrity }}"
   />
-  <script
-    src="https://kit.fontawesome.com/6a1cb3174c.js"
-    crossorigin="anonymous"
-  ></script>
+  <link rel="stylesheet" href="{{ "css/fontawesome.min.css" | relURL }}" />
+  <link rel="stylesheet" href="{{ "css/solid.min.css" | relURL }}" />
 {{ end }}
 
 {{ define "main" }}
