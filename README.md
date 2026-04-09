@@ -4,4 +4,4 @@ A fully responsive, self-designed static website for the Schülerforschungswerks
 
 ## Website
 
-[Visit the live website](https://sfw-website.netlify.app/)
+[Visit the live website](https://schuelerforschungswerkstatt.de/)

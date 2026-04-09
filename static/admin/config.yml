@@ -12,7 +12,7 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 locale: de
 
 # Add site links in DecapCMS (optional)
-site_url: https://sfw-website.netlify.app
+site_url: https://schuelerforschungswerkstatt.de/
 media_folder: static/images/articles
 public_folder: /images/articles
 collections:
