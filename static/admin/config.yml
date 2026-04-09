@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: plesioo/SFW-Website
+  repo: schuelerforschungswerkstatt-kgw/SFW-Website
   branch: master
   identity_url: https://auth.decapbridge.com/sites/8cb8b33a-17dd-4625-8f2b-5dd7c28c7849
   gateway_url: https://gateway.decapbridge.com

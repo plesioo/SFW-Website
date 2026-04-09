@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plesioo/SFW-Website.git"
+    "url": "git+https://github.com/schuelerforschungswerkstatt-kgw/SFW-Website.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/plesioo/SFW-Website/issues"
+    "url": "https://github.com/schuelerforschungswerkstatt-kgw/SFW-Website/issues"
   },
-  "homepage": "https://github.com/plesioo/SFW-Website#readme",
+  "homepage": "https://github.com/schuelerforschungswerkstatt-kgw/SFW-Website#readme",
   "description": "",
   "devDependencies": {
     "prettier": "^3.6.2",
